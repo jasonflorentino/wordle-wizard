@@ -90,9 +90,13 @@ footer {
 }
 
 h1 {
-  @include fontFamily-headline;
-  font-size: 3.5rem;
   margin-bottom: 1rem;
+  @include fontFamily-headline;
+  font-size: 2.75rem;
+
+  @include tablet {
+    font-size: 4rem;
+  }
 }
 
 p {
@@ -156,9 +160,13 @@ a {
 .textLabel {
   font-family: sans-serif;
   @include fontFamily-headline2;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   display: inline-block;
   margin-bottom: .5rem;
+
+  @include tablet {
+    font-size: 1.6rem;
+  }
 }
 
 .subheading {
@@ -184,6 +192,11 @@ a {
   &__black::before {
     @extend .prefix;
     content: "⬛️";
+  }
+
+  &__mainTitle::before {
+    @extend .prefix;
+    content: "🔮";
   }
 }
 
