@@ -1,18 +1,18 @@
 const knownPositions = ['', '', '', '', ''];
 const existsButNotHere =  ['a', '', 'a', 'n', 'a'];
 const doesntExist = 'risemochbld';
-const singlesOnly = true;
+const singlesOnly = true; // Filter words with two of the same character
 
 (async () => {
   console.log(await match(
     knownPositions, 
     existsButNotHere,
     doesntExist,
-    singlesOnly // Filter words with two of the same character
+    singlesOnly
   ))
 })();
 
-async function match(knownPosition, unknownPosition, doesntExist, singlesOnly=true) {
+async function match(knownPosition, unknownPosition, doesntExist, singlesOnly=false) {
   const { FILTERED_WORDS } = await import('../shared/words.mjs');
 
   let kp = knownPosition
