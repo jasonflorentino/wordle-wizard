@@ -2,9 +2,9 @@
 
 ***See possible next guesses in [Wordle](https://www.powerlanguage.co.uk/wordle/)***
 
-**I'll be honest, I'm not very good at word games. Scrabble, Bananagrams, and, now, Wordle. They are fun for me! To an extent. Because for some reason my brain just isn't good at coming up with words. I'm also not the quickest reader. I wonder if that's related. Anyway, to help get myself into Wordle, I did something my brain *does* find fun: coding!**
+**I'll be honest, I'm not very good at word games. Scrabble, Bananagrams, and now Wordle. They _are_ fun for me! To an extent. Because for some reason my brain just isn't good at coming up with words. I'm also not the quickest reader. I wonder if that's related. Anyway, to help get myself into Wordle, I did something my brain *does* find fun: coding!**
 
-**What if I could make something that would make it easier for me to choose what word to try? I could give it some parameters – What letters do we KNOW are there? Which letters do we know aren't there? Would this be cheating? Who cares! Wordle is now very fun for me. Especially now that I get to take part in the post-game where my family and I tell each other what silly scene is being made in our coloured-emoji-square picture.**
+**What if I could make something that would make it easier for me to choose what word to try next? I could give it some parameters – What letters do we KNOW are there? Which letters do we know aren't there? Would this be cheating? Who cares! Wordle is now wonderfully fun for me. Especially now that I get to take part in the post-game where my family and I tell each other what silly scene is being made in our coloured-emoji-square picture.**
 
 **— Jason, Jan 15 2022**
 
