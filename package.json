@@ -1,0 +1,19 @@
+{
+  "name": "wordle-helper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "styles": "echo \"Building styles...\" && sass --style=compressed --stop-on-error --no-source-map browser/src/styles:browser/build",
+    "js": "echo \"Building javascript...\" && esbuild browser/src/script.js --bundle --minify --outdir=browser/build --target=chrome58,firefox57,safari11,edge16",
+    "build": "npm run styles & npm run js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.14.11",
+    "sass": "^1.48.0"
+  }
+}

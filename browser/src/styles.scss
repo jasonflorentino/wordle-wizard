@@ -1,0 +1,148 @@
+// Chakra UI Purple
+$Purple50: #FAF5FF;
+$Purple100: #E9D8FD;
+$Purple200: #D6BCFA;
+$Purple300: #B794F4;
+$Purple400: #9F7AEA;
+$Purple500: #805AD5;
+$Purple600: #6B46C1;
+$Purple700: #553C9A;
+$Purple800: #44337A;
+$Purple900: #322659;
+
+@mixin fontFamily-headline {
+  font-family: lores-21-serif,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin fontFamily-headline2 {
+  font-family: lores-15,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin fontFamily-text {
+  font-family: lores-12, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::selection {
+  color: $Purple800;
+  background: $Purple200;
+}
+
+body {
+  padding: 1rem;
+  min-height: 100vh;
+
+  @include fontFamily-text;
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, $Purple800, $Purple700);
+  color: $Purple100;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  @include fontFamily-headline;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.4;
+}
+
+.app {
+  max-width: 1080px;
+  padding-top: 1rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  padding: .5rem .5rem;
+  width: 100%;
+
+  @include fontFamily-text;
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: $Purple400;
+  color: $Purple700;
+
+  border: 1px solid $Purple500;
+  border-radius: .25rem;
+  outline: 1px solid rgba($Purple50, 0);
+  transition: all .25s;
+
+  &:focus {
+    background-color: $Purple100;
+    outline: 1px solid rgba($Purple300, 1);
+  }
+
+  &__singleLetter {
+    @extend .input;
+    width: 3rem;
+  }
+
+  &__multiLetter {
+    @extend .input;
+    width: 18%;
+  }
+}
+
+.box {
+  margin-bottom: 1.5rem;
+
+  &__results {
+    border-top: 2px solid $Purple500;
+    padding-top: 1.5rem;
+  }
+}
+
+.textLabel {
+  font-family: sans-serif;
+  @include fontFamily-headline2;
+  font-size: 1.6rem;
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+.subheading {
+  @include fontFamily-headline2;
+  font-size: 1.4rem;
+}
+
+.prefix {
+  display: inline-block;
+  margin-right: .5rem;
+  font-size: 0.9em;
+
+  &__green::before {
+    @extend .prefix;
+    content: "🟩";
+  }
+
+  &__yellow::before {
+    @extend .prefix;
+    content: "🟨";
+  }
+
+  &__black::before {
+    @extend .prefix;
+    content: "⬛️";
+  }
+}

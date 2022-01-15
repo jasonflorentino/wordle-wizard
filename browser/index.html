@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.typekit.net/iwj0vmq.css">
+  <link rel="stylesheet" href="./build/styles.css" />
+  <title>Wordle Wizard</title>
+</head>
+<body>
+  
+  <div class="app">
+    <h1>🔮 Wordle Wizard</h1>
+
+    <div class="box">
+      <label for="known1" class="textLabel prefix__green">
+        Known Letters
+      </label>
+      <div>
+        <input id="known1" type="text" class="input__singleLetter" />
+        <input id="known2" type="text" class="input__singleLetter" />
+        <input id="known3" type="text" class="input__singleLetter" />
+        <input id="known4" type="text" class="input__singleLetter" />
+        <input id="known5" type="text" class="input__singleLetter" />
+      </div>
+    </div>
+
+    <div class="box">
+      <label for="exists1" class="textLabel prefix__yellow">
+        Exists But Not Here
+      </label>
+      <div class="flex">
+        <input id="exists1" type="text" class="input__multiLetter" />
+        <input id="exists2" type="text" class="input__multiLetter" />
+        <input id="exists3" type="text" class="input__multiLetter" />
+        <input id="exists4" type="text" class="input__multiLetter" />
+        <input id="exists5" type="text" class="input__multiLetter" />
+      </div>
+    </div>
+
+    <div class="box">
+      <label for="doesntExistTextInput" class="textLabel prefix__black">
+        Doesn't Exist
+      </label>
+      <div>
+        <input id="doesntExistTextInput" type="text" class="input" />
+      </div>
+    </div>
+
+    <div class="box">
+      <input 
+        type="checkbox" 
+        id="singlesOnlyCheckBox" 
+        name="singlesOnlyCheckBox" 
+        value="singlesOnly"
+      >
+      <label for="singlesOnlyCheckBox" class="textLabel">Singles Only</label>
+    </div>
+
+    <div class="box__results">
+      <p id="possibleWordsCount" class="subheading">Enter some parameters</p>
+      <p id="possibleWords"></p>
+    </div>
+  </div>
+
+  <script src="./build/script.js"></script>
+</body>
+</html>
