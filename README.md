@@ -1,6 +1,6 @@
 # 🔮  Wordle Wizard
 
-***See possible next guesses in [Wordle](https://www.powerlanguage.co.uk/wordle/)***
+***Find your next possible guess [Wordle](https://www.powerlanguage.co.uk/wordle/)***
 
 **I'll be honest, I'm not very good at word games. Scrabble, Bananagrams, and now Wordle. They _are_ fun for me! To an extent. Because for some reason my brain just isn't good at coming up with words. I'm also not the quickest reader. I wonder if that's related. Anyway, to help get myself into Wordle, I did something my brain *does* find fun: coding!**
 
