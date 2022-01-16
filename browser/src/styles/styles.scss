@@ -1,0 +1,137 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./globals";
+
+.app {
+  max-width: 1080px;
+  padding: 1rem 1rem 4rem 1rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  padding: .5rem .5rem;
+  width: 100%;
+
+  @include fontFamily-text;
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: $Purple400;
+  color: $Purple700;
+
+  border: 1px solid $Purple500;
+  border-radius: .25rem;
+  outline: 1px solid rgba($Purple50, 0);
+  transition: all .25s;
+
+  &:focus {
+    background-color: $Purple100;
+    outline: 1px solid rgba($Purple300, 1);
+  }
+
+  &__singleLetter {
+    @extend .input;
+    width: 3rem;
+  }
+
+  &__multiLetter {
+    @extend .input;
+    width: 18%;
+  }
+}
+
+.box {
+  margin-bottom: 1.5rem;
+
+  &__results {
+    border-top: 2px solid $Purple500;
+    padding-top: 1.5rem;
+  }
+}
+
+.textLabel {
+  font-family: sans-serif;
+  @include fontFamily-headline2;
+  font-size: 1.3rem;
+  display: inline-block;
+  margin-bottom: .5rem;
+
+  @include tablet {
+    font-size: 1.6rem;
+  }
+}
+
+.subheading {
+  @include fontFamily-headline2;
+  font-size: 1.4rem;
+}
+
+.prefix {
+  display: inline-block;
+  margin-right: .5rem;
+  font-size: 0.9em;
+
+  &__green::before {
+    @extend .prefix;
+    content: "🟩";
+  }
+
+  &__yellow::before {
+    @extend .prefix;
+    content: "🟨";
+  }
+
+  &__black::before {
+    @extend .prefix;
+    content: "⬛️";
+  }
+
+  &__mainTitle::before {
+    @extend .prefix;
+    content: "🔮";
+  }
+}
+
+.footer {
+  &__sticky {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  
+    display: grid;
+    place-items: center;
+  }
+
+  &__container {
+    padding: 4rem 1rem;
+
+    background: $DarkGrey;
+    @include fontFamily-text;
+    font-size: 1.1rem;
+  
+    @include tablet {
+      font-size: 1.3rem;
+    }
+  }
+  
+  &__text {
+    margin-bottom: .5rem;
+
+    &--link {
+      @extend .footer__text;
+      padding-bottom: .15rem;
+      border-bottom: 2px solid $Purple400;
+      transition: all .2s;
+  
+      &:hover {
+        color: $Purple300;
+        border-bottom: 2px solid rgba($Purple400, 0);
+      }
+    }
+  }
+}

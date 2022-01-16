@@ -1,0 +1,55 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::selection {
+  color: $Purple800;
+  background: $Purple200;
+}
+
+html {
+  background: $DarkGrey;
+}
+
+body {
+  @include fontFamily-text;
+  font-size: 1.2rem;
+  color: $Purple100;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(90deg, $Purple800, $Purple700);
+}
+
+h1 {
+  margin-bottom: 1rem;
+  @include fontFamily-headline;
+  font-size: 2.75rem;
+
+  @include tablet {
+    font-size: 4rem;
+  }
+}
+
+p {
+  line-height: 1.4;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
