@@ -44,7 +44,7 @@ You'll need to fill in these variables according to the current state of your ga
 - `knownPositions` is an array of strings that should only be one lower case letter each.  
 - `existsButNotHere` can handle multiple letters in the same position, but they all still need to be lowercase.  
 - `doesntExist` is one long string of all the letters that aren't present in the solution. Again, lowercase.  
-- `singlesOnly` is a boolean value of whether you want words with more the one of the same character in the output.  
+- `singlesOnly` is a boolean value of whether you want words with more than one of the same character in the output.  
 
 ### `/shared`
 

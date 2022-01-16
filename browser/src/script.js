@@ -89,11 +89,11 @@ function match(
   unknownPosition, 
   doesntExist, 
   words, 
-  singlesOnly=true
+  singlesOnly=false
 ) {
-  let kp = knownPosition.map(str => str.toLowerCase())
-  let up = unknownPosition.map(str => str.toLowerCase())
-  let de = doesntExist.split('').map(str => str.toLowerCase())
+  let kp = knownPosition.map(str => str.trim().toLowerCase()[0]) // Only take first char
+  let up = unknownPosition.map(str => str.trim().toLowerCase())
+  let de = doesntExist.trim().toLowerCase().split('')
 
   return words.filter(word => {
     // Remove words with letters that should be exact match
