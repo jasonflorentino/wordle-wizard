@@ -19,17 +19,19 @@
   @include fontFamily-text;
   font-size: 1.5rem;
   text-align: center;
-  background-color: $Purple400;
+  background-color: $Purple500;
   color: $Purple700;
 
   border: 1px solid $Purple500;
-  border-radius: .25rem;
-  outline: 1px solid rgba($Purple50, 0);
+  border-radius: .3rem;
+  outline: none;
+  box-shadow: 0 .1rem .1rem .1rem rgba($Purple900, 0);
   transition: all .25s;
 
   &:focus {
+    outline: none;
     background-color: $Purple100;
-    outline: 1px solid rgba($Purple300, 1);
+    box-shadow: 0 .2rem .4rem .2rem rgba($Purple900, .5);
   }
 
   &__singleLetter {
