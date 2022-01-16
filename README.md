@@ -29,11 +29,11 @@ So you can either
 My first version of this Wizard was a simple script that I ran in the command line. It's not the most user-friendly – you (1) had to know what the heck all this crap is, and (2) it's just kind of tedious to edit a script and run it for each guess.
 
 #### How to use this
-You'll need to have [node](https://nodejs.org/en/) installed, but once you do, you can run `node ./node/helper.js` in your command line and see what would be valid next guesses in Wordle.
+You'll need to have [node](https://nodejs.org/en/) installed, but once you do, you can run `node ./node/wizard.js` in your command line and see what would be valid next guesses in Wordle.
 
 Those next guesses are determined by what's in the first 4 lines:
 ```javascript
-// ./node/helper.js
+// ./node/wizard.js
 const knownPositions = ['', '', '', '', ''];
 const existsButNotHere =  ['', '', '', '', ''];
 const doesntExist = '';

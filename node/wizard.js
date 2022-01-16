@@ -12,7 +12,12 @@ const singlesOnly = true; // Filter words with two of the same character
   ))
 })();
 
-async function match(knownPosition, unknownPosition, doesntExist, singlesOnly=false) {
+async function match(
+  knownPosition, 
+  unknownPosition, 
+  doesntExist, 
+  singlesOnly=false
+) {
   const { FILTERED_WORDS } = await import('../shared/words.mjs');
 
   let kp = knownPosition
