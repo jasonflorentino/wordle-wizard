@@ -11,7 +11,7 @@
 ## What's inside?
 
 ### `/browser`
-This is the newer version of what's in `/node`. Instead of running a script in the terminal every time you wanted a new set of words, `/browser/index.html` provides a webpage interface for easy Wordle-ing.
+This is the newer version of what's in `/node`. Instead of running a script in the terminal every time you want a new set of words, `/browser/index.html` provides a webpage interface for easy Wordle-ing.
 
 [Click here](https://wordlewizard.vercel.app/) to view a live deployment of this webpage.
 
@@ -45,6 +45,11 @@ You'll need to fill in these variables according to the current state of your ga
 - `existsButNotHere` can handle multiple letters in the same position, but they all still need to be lowercase.  
 - `doesntExist` is one long string of all the letters that aren't present in the solution. Again, lowercase.  
 - `singlesOnly` is a boolean value of whether you want words with more than one of the same character in the output.  
+
+### `/scripts`
+
+A folder for none other than scripts!
+- `addword.sh` is used to automate adding a new "used" word. Run it by running `npm run addword -- <new-used-word>`. It works by grabbing the first line from the shared `words.mjs` and replacing the end of it. Then it runs the `build` script to include the change in the browser javascript.
 
 ### `/shared`
 
