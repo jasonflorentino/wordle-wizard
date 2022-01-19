@@ -11,7 +11,7 @@
 ## What's inside?
 
 ### `/browser`
-This is the newer version of what's in `/node`. Instead of running a script in the terminal every time you wanted a new set of words, `/browser/index.html` provides a webpage interface for easy Wordle-ing.
+This is the newer version of what's in `/node`. Instead of running a script in the terminal every time you want a new set of words, `/browser/index.html` provides a webpage interface for easy Wordle-ing.
 
 [Click here](https://wordlewizard.vercel.app/) to view a live deployment of this webpage.
 
