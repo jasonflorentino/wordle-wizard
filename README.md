@@ -46,6 +46,11 @@ You'll need to fill in these variables according to the current state of your ga
 - `doesntExist` is one long string of all the letters that aren't present in the solution. Again, lowercase.  
 - `singlesOnly` is a boolean value of whether you want words with more than one of the same character in the output.  
 
+### `/scripts`
+
+A folder for none other than scripts!
+- `addword.sh` is used to automate adding a new "used" word. Run it by running `npm run addword -- <new-used-word>`. It works by grabbing the first line from the shared `words.mjs` and replacing the end of it. Then it runs the `build` script to include the change in the browser javascript.
+
 ### `/shared`
 
 This is a folder that contains resources that are shared by both `/browser` and `/node`, namely:
