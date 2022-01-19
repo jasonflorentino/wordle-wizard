@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "styles": "echo \"Building styles...\" && sass --style=compressed --stop-on-error --no-source-map browser/src/styles:browser/build",
     "js": "echo \"Building javascript...\" && esbuild browser/src/script.js --bundle --minify --outdir=browser/build --target=chrome58,firefox57,safari11,edge16",
-    "build": "npm run styles & npm run js"
+    "build": "npm run styles & npm run js",
+    "addword": "./scripts/addword.sh"
   },
   "keywords": [],
   "author": "",

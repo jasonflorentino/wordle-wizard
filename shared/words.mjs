@@ -1,6 +1,7 @@
-const USED_WORDS = new Set([
-  "rebus", "boost", "truss", "siege", "tiger", "banal", "slump", "crank", "query", "drink", "favor", "abbey", "tangy", "panic"
-])
+const usedWordsArray = ["rebus", "boost", "truss", "siege", "tiger", "banal", "slump", "crank", "query", "drink", "favor", "abbey", "tangy", "panic", "solar", "shire", "proxy"]
+// NOTE: The above line is referenced in /scripts/addword.sh
+
+const USED_WORDS = new Set(usedWordsArray)
 
 /**
  * List of valid Wordle words from 
