@@ -27,6 +27,16 @@ sed -i "" "1s/.*/$NEW_LINE/" $FILE_NAME
 echo "Done!"
 
 npm run js
-git add -A
-git commit -m "Add used word: $1"
+
+read -p "Added $1. Would you like to commit the change? y/n " COMMIT
+
+if [[ $COMMIT == [yY] ]]
+then
+      git add -A
+      git commit -m "Add used word: $1"
+      git push
+else
+      echo "Exiting..."
+      exit 0
+fi
 
