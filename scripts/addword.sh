@@ -27,5 +27,6 @@ sed -i "" "1s/.*/$NEW_LINE/" $FILE_NAME
 echo "Done!"
 
 npm run js
-
+git add -A
+git commit -m "Add used word: $1"
 
