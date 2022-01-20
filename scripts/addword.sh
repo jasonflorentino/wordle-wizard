@@ -28,7 +28,8 @@ echo "Done!"
 
 npm run js
 
-read -p "Added $1. Would you like to commit the change? y/n " COMMIT
+NEWLINE=$'\n'
+read -p "${NEWLINE}Added '${1}'${NEWLINE}Would you like to commit ALL unstaged changes? y/n " COMMIT
 
 if [[ $COMMIT == [yY] ]]
 then
@@ -36,7 +37,7 @@ then
       git commit -m "Add used word: $1"
       git push
 else
-      echo "Exiting..."
+      echo "Exiting...${NEWLINE}"
       exit 0
 fi
 
