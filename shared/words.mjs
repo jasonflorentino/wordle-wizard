@@ -1,4 +1,4 @@
-const usedWordsArray = ["rebus", "boost", "truss", "siege", "tiger", "banal", "slump", "crank", "query", "drink", "favor", "abbey", "tangy", "panic", "solar", "shire", "proxy", "point", "robot"]
+const usedWordsArray = ["rebus", "boost", "truss", "siege", "tiger", "banal", "slump", "crank", "query", "drink", "favor", "abbey", "tangy", "panic", "solar", "shire", "proxy", "point", "robot", "prick"]
 // NOTE: The above line is referenced in /scripts/addword.sh
 
 const USED_WORDS = new Set(usedWordsArray)
