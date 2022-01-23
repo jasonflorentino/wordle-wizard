@@ -56,14 +56,28 @@
         </div>
       </div>
 
-      <div class="box">
-        <input 
-          type="checkbox" 
-          id="singlesOnlyCheckBox" 
-          name="singlesOnlyCheckBox" 
-          value="singlesOnly"
-        >
-        <label for="singlesOnlyCheckBox" class="textLabel">Singles Only</label>
+      <div class="box checkboxesContainer">
+        <div class="checkboxAndLabel">
+          <input 
+            type="checkbox" 
+            id="excludePrevAnswersCheckbox" 
+            name="excludePrevAnswersCheckbox" 
+            value="excludePrevAnswers"
+            checked
+          >
+          <span class="checkmark"></span>
+          <label for="excludePrevAnswersCheckbox" class="textLabel">Exclude Previous Answers</label>
+        </div>
+        <div class="checkboxAndLabel">
+          <input 
+            type="checkbox" 
+            id="singlesOnlyCheckbox" 
+            name="singlesOnlyCheckbox" 
+            value="singlesOnly"
+          >
+          <span class="checkmark"></span>
+          <label for="singlesOnlyCheckbox" class="textLabel">Singles Only</label>
+        </div>
       </div>
 
       <div class="box__results">

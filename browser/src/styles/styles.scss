@@ -20,7 +20,7 @@
   font-size: 1.5rem;
   text-align: center;
   background-color: $Purple500;
-  color: $Purple700;
+  color: $Purple800;
 
   border: 1px solid $Purple500;
   border-radius: .3rem;
@@ -54,13 +54,111 @@
   }
 }
 
+.checkboxesContainer {
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    flex-direction: row;
+  }
+}
+
+.checkboxAndLabel {
+  position: relative;
+  margin-top: 0.25rem;
+  @include tablet {
+    margin-top: 0;
+    margin-right: 1.5rem;
+  }
+
+  // Hides native checkbox
+  & > input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+  }
+
+  & > .textLabel {
+    padding-left: 1.75rem;
+    @include tablet {
+      padding-left: 2rem;
+    }
+
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  &:hover .checkmark {
+    // Checkbox background on hover
+    background-color: $Purple200;
+  }
+  & > input:checked ~ .checkmark {
+    // Checkbox background when checked
+    background-color: $Purple500;
+  } 
+  & > input:checked ~ .checkmark::after {
+    // Display custom checkmark when checked.
+    display: block;
+  }
+  & > .checkmark::after {
+    // Drawn custom checkmark.
+    left: .45rem;
+    top: .2rem;
+    width: .35rem;
+    height: .65rem;
+    @include tablet {
+      width: .45rem;
+      height: .75rem;
+      left: .6rem;
+      top: .3rem;
+    }
+
+    // Colour of checkmark
+    border: solid $Purple50;
+    // Stroke weight of checkmark
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  // Checkbox background when un-checked
+  background-color: $Purple100;
+
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: .2rem;
+  @include tablet {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: .25rem;
+  }
+
+  // This IS the custom checkmark.
+  // Hide it when not checked.
+  &::after {
+    content: "";
+    position: absolute;
+    display: none;
+  }  
+}
+
 .textLabel {
   font-family: sans-serif;
   @include fontFamily-headline2;
   font-size: 1.3rem;
   display: inline-block;
   margin-bottom: .5rem;
-
+  
   @include tablet {
     font-size: 1.6rem;
   }
@@ -137,3 +235,4 @@
     }
   }
 }
+

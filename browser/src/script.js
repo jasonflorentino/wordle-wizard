@@ -1,12 +1,10 @@
-import { FILTERED_WORDS } from '../../shared/words.mjs';
-
 /**
  * DOM elements
  */
-    
-const known1Input = document.getElementById("known1")
+
 const known2Input = document.getElementById("known2")
 const known3Input = document.getElementById("known3")
+const known1Input = document.getElementById("known1")
 const known4Input = document.getElementById("known4")
 const known5Input = document.getElementById("known5")
 
@@ -17,7 +15,8 @@ const exists4Input = document.getElementById("exists4")
 const exists5Input = document.getElementById("exists5")
 
 const doesntExistInput = document.getElementById("doesntExistTextInput")
-const singlesOnlyInput = document.getElementById("singlesOnlyCheckBox")
+const excludePrevAnswersInput = document.getElementById("excludePrevAnswersCheckbox")
+const singlesOnlyInput = document.getElementById("singlesOnlyCheckbox")
 
 const possibleWordsCountEl = document.getElementById("possibleWordsCount")
 const possibleWordsEl = document.getElementById("possibleWords")
@@ -39,13 +38,18 @@ exists4Input.addEventListener('input', runMatch)
 exists5Input.addEventListener('input', runMatch)
 
 doesntExistInput.addEventListener('input', runMatch)
+excludePrevAnswersInput.addEventListener('input', runMatch)
 singlesOnlyInput.addEventListener('input', runMatch)
 
 /**
  * Function Defs
  */
 
+import { ALL_WORDS, USED_WORDS } from '../../shared/words.mjs';
+const FILTERED_WORDS = ALL_WORDS.filter(word => !USED_WORDS.has(word))
+
 function runMatch() {
+  // Get all necessary values
   const knownPositions = [
     known1Input.value, 
     known2Input.value, 
@@ -61,16 +65,20 @@ function runMatch() {
     exists5Input.value
   ];
   const doesntExist = doesntExistInput.value;
+  const excludePreviousAnswers = excludePrevAnswersInput.checked;
   const singlesOnly = singlesOnlyInput.checked;
 
+  // Determine valid words
   const filteredWords = match(
     knownPositions, 
     existsButNotHere,
     doesntExist,
-    FILTERED_WORDS, 
-    singlesOnly // Filter words with two of the same character
+    // Choose which set of words to filter from
+    excludePreviousAnswers ? FILTERED_WORDS : ALL_WORDS, 
+    singlesOnly
   )
 
+  // Set results into DOM
   possibleWordsCountEl.innerText = filteredWords.length.toLocaleString() + ' possible words'
   possibleWordsEl.innerText = filteredWords.join(', ')
 }
@@ -82,7 +90,7 @@ function runMatch() {
  * @param {string} doesntExist 
  * @param {string[]} words 
  * @param {boolean} singlesOnly 
- * @returns 
+ * @returns {string[]}
  */
 function match(
   knownPosition, 
@@ -91,9 +99,10 @@ function match(
   words, 
   singlesOnly=false
 ) {
-  let kp = knownPosition.map(str => str.trim().toLowerCase()[0]) // Only take first char
-  let up = unknownPosition.map(str => str.trim().toLowerCase())
-  let de = doesntExist.trim().toLowerCase().split('')
+  const sanitizeString = (str) => str.trim().toLowerCase()
+  let kp = knownPosition.map(str => sanitizeString(str)[0]) // Only take first char
+  let up = unknownPosition.map(sanitizeString)
+  let de = sanitizeString(doesntExist).split('')
 
   return words.filter(word => {
     // Remove words with letters that should be exact match
