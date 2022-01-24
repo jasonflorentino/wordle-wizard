@@ -57,7 +57,7 @@
 .checkboxesContainer {
   display: flex;
   flex-direction: column;
-  @include tablet {
+  @include desktop {
     flex-direction: row;
   }
 }
@@ -234,9 +234,18 @@
       }
     }
   }
+
+  &__footnoteContainer {
+    margin-top: 0.5rem;
+  }
 }
 
 .footnote {
   text-align: center;
   font-size: 0.8em;
+  line-height: 1.6;
+
+  & a {
+    padding-bottom: .08rem;
+  }
 }

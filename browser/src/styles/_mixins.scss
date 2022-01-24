@@ -1,25 +1,39 @@
 @use "./variables" as *;
 
+//
+// Media
+//
+
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+//
+// Typography
+//
+
 @mixin fontFamily-headline {
     font-family: lores-21-serif, system-ui, sans-serif;
     font-weight: 400;
     font-style: normal;
   }
   
-  @mixin fontFamily-headline2 {
-    font-family: lores-15, system-ui, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  @mixin fontFamily-text {
-    font-family: lores-12, system-ui, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  @mixin tablet {
-    @media (min-width: $tablet) {
-      @content;
-    }
-  }
+@mixin fontFamily-headline2 {
+  font-family: lores-15, system-ui, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin fontFamily-text {
+  font-family: lores-12, system-ui, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

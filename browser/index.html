@@ -60,6 +60,16 @@
         <div class="checkboxAndLabel">
           <input 
             type="checkbox" 
+            id="singlesOnlyCheckbox" 
+            name="singlesOnlyCheckbox" 
+            value="singlesOnly"
+          >
+          <span class="checkmark"></span>
+          <label for="singlesOnlyCheckbox" class="textLabel">Singles Only</label>
+        </div>
+        <div class="checkboxAndLabel">
+          <input 
+            type="checkbox" 
             id="excludePrevAnswersCheckbox" 
             name="excludePrevAnswersCheckbox" 
             value="excludePrevAnswers"
@@ -71,12 +81,23 @@
         <div class="checkboxAndLabel">
           <input 
             type="checkbox" 
-            id="singlesOnlyCheckbox" 
-            name="singlesOnlyCheckbox" 
-            value="singlesOnly"
+            id="shuffleOutputCheckbox" 
+            name="shuffleOutputCheckbox" 
+            value="shuffleOutput"
+            checked
           >
           <span class="checkmark"></span>
-          <label for="singlesOnlyCheckbox" class="textLabel">Singles Only</label>
+          <label for="shuffleOutputCheckbox" class="textLabel">Shuffle Output†</label>
+        </div>
+        <div class="checkboxAndLabel">
+          <input 
+            type="checkbox" 
+            id="alphabetizeOutputCheckbox" 
+            name="alphabetizeOutputCheckbox" 
+            value="alphabetizeOutput"
+          >
+          <span class="checkmark"></span>
+          <label for="alphabetizeOutputCheckbox" class="textLabel">Alphabetize</label>
         </div>
       </div>
 
@@ -110,7 +131,20 @@
       </a>
     </p>
 
-    <p class="footer_text footnote">*Not all the previous answers ever. Just the ones that I know.</p>
+    <div class="footer__footnoteContainer">
+      <p class="footnote">Inspired by 
+        <a 
+          href="https://www.powerlanguage.co.uk/wordle/"
+          class="footer__text--link" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Wordle
+        </a>
+      </p>
+      <p class="footnote">* Not all the previous answers ever. Just the ones that I know.</p>
+      <p class="footnote">† Viewing the word list unshuffled may reveal secrets you didn't want to know.</p>
+    </div>
   </footer>
 
   <script src="./build/script.js"></script>

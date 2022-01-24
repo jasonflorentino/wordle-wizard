@@ -15,8 +15,11 @@ const exists4Input = document.getElementById("exists4")
 const exists5Input = document.getElementById("exists5")
 
 const doesntExistInput = document.getElementById("doesntExistTextInput")
-const excludePrevAnswersInput = document.getElementById("excludePrevAnswersCheckbox")
+
 const singlesOnlyInput = document.getElementById("singlesOnlyCheckbox")
+const excludePrevAnswersInput = document.getElementById("excludePrevAnswersCheckbox")
+const shuffleOutputCheckbox = document.getElementById("shuffleOutputCheckbox")
+const alphabetizeOutputCheckbox = document.getElementById("alphabetizeOutputCheckbox")
 
 const possibleWordsCountEl = document.getElementById("possibleWordsCount")
 const possibleWordsEl = document.getElementById("possibleWords")
@@ -38,8 +41,11 @@ exists4Input.addEventListener('input', runMatch)
 exists5Input.addEventListener('input', runMatch)
 
 doesntExistInput.addEventListener('input', runMatch)
-excludePrevAnswersInput.addEventListener('input', runMatch)
+
 singlesOnlyInput.addEventListener('input', runMatch)
+excludePrevAnswersInput.addEventListener('input', runMatch)
+shuffleOutputCheckbox.addEventListener('input', runMatch)
+alphabetizeOutputCheckbox.addEventListener('input', runMatch)
 
 /**
  * Function Defs
@@ -65,8 +71,10 @@ function runMatch() {
     exists5Input.value
   ];
   const doesntExist = doesntExistInput.value;
-  const excludePreviousAnswers = excludePrevAnswersInput.checked;
   const singlesOnly = singlesOnlyInput.checked;
+  const excludePrevAnswers = excludePrevAnswersInput.checked;
+  const shuffleOutput = shuffleOutputCheckbox.checked;
+  const alphabetize = alphabetizeOutputCheckbox.checked;
 
   // Determine valid words
   const filteredWords = match(
@@ -74,9 +82,15 @@ function runMatch() {
     existsButNotHere,
     doesntExist,
     // Choose which set of words to filter from
-    excludePreviousAnswers ? FILTERED_WORDS : ALL_WORDS, 
+    excludePrevAnswers ? FILTERED_WORDS : ALL_WORDS, 
     singlesOnly
   )
+
+  if (alphabetize) {
+    filteredWords.sort();
+  } else if (shuffleOutput) {
+    shuffle(filteredWords)
+  }
 
   // Set results into DOM
   possibleWordsCountEl.innerText = filteredWords.length.toLocaleString() + ' possible words'
@@ -136,6 +150,11 @@ function match(
   })
 }
 
+/**
+ * Tests if a word has only 
+ * unique characters.
+ * @param {string} word
+ */
 function isSinglesOnly(word) {
   const chars = new Set();
   for (let c of word) {
@@ -143,4 +162,20 @@ function isSinglesOnly(word) {
     else chars.add(c);
   }
   return true;
+}
+
+/**
+ * Shuffles in place via Fisher Yates.
+ * Returns `undefined` to make this clear.
+ * @param {[]} arr
+ */
+ function shuffle(arr) {
+  let i = arr.length - 1;
+  while (i > 0) {
+    const j = Math.floor(Math.random() * i);
+    let x  = arr[i];
+    arr[i] = arr[j];
+    arr[j] = x;
+    i--;
+  }
 }
