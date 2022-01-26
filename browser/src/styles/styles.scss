@@ -71,7 +71,7 @@
   }
 
   // Hides native checkbox
-  & > input {
+  & input {
     position: absolute;
     opacity: 0;
     height: 0;
@@ -79,7 +79,7 @@
     cursor: pointer;
   }
 
-  & > .textLabel {
+  & .textLabel {
     padding-left: 1.75rem;
     @include tablet {
       padding-left: 2rem;
@@ -96,15 +96,15 @@
     // Checkbox background on hover
     background-color: $Purple200;
   }
-  & > input:checked ~ .checkmark {
+  & input:checked ~ .checkmark {
     // Checkbox background when checked
     background-color: $Purple500;
   } 
-  & > input:checked ~ .checkmark::after {
+  & input:checked ~ .checkmark::after {
     // Display custom checkmark when checked.
     display: block;
   }
-  & > .checkmark::after {
+  & .checkmark::after {
     // Drawn custom checkmark.
     left: .45rem;
     top: .2rem;
@@ -237,13 +237,20 @@
 
   &__footnoteContainer {
     margin-top: 0.5rem;
+    border-top: 2px dashed $Purple700;
+    padding-top: 0.8rem;
   }
 }
 
 .footnote {
   text-align: center;
   font-size: 0.8em;
-  line-height: 1.6;
+  line-height: 1.3;
+  margin-bottom: .4rem;
+  @include tablet {
+    line-height: 1.2;
+    margin-bottom: .25rem;
+  }
 
   & a {
     padding-bottom: .08rem;
