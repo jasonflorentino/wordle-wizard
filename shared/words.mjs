@@ -1,4 +1,4 @@
-const usedWordsArray = ["rebus", "boost", "truss", "siege", "tiger", "banal", "slump", "crank", "query", "drink", "favor", "abbey", "tangy", "panic", "solar", "shire", "proxy", "point", "robot", "prick", "wince", "crimp", "knoll", "sugar", "whack", "mount", "perky", "wrung", "light", "could", "those", "moist", "shard", "pleat"]
+const usedWordsArray = ["rebus", "boost", "truss", "siege", "tiger", "banal", "slump", "crank", "query", "drink", "favor", "abbey", "tangy", "panic", "solar", "shire", "proxy", "point", "robot", "prick", "wince", "crimp", "knoll", "sugar", "whack", "mount", "perky", "wrung", "light", "could", "those", "moist", "shard", "pleat", "aloft", "skill", "elder", "frame"]
 // NOTE: The above line is used in /scripts/addword.sh
 //       Be careful if editing this line directly!
 
